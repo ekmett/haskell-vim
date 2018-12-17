@@ -16,6 +16,10 @@ if get(g:, 'haskell_backpack', 0)
   syn keyword haskellBackpackDependency dependency
 endif
 
+if get(g:, 'haskell_fail', 0)
+  syn keyword haskellFail fail guard
+endif
+
 syn spell notoplevel
 syn match haskellRecordField contained containedin=haskellBlock
   \ "[_a-z][a-zA-Z0-9_']*\(,\s*[_a-z][a-zA-Z0-9_']*\)*\_s\+::\_s"
@@ -204,5 +208,9 @@ endif
 if get(g:, 'haskell_backpack', 0)
   highlight def link haskellBackpackStructure Structure
   highlight def link haskellBackpackDependency Include
+endif
+
+if get(g:, 'haskell_fail', 0)
+  highlight def link haskellFail Structure
 endif
 let b:current_syntax = "haskell"
